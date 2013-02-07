@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-neoWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/neoWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/neoWS" destdir="${build.generated.dir}/jax-wsCache/neoWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/neoWS/wsdl/estia.hua.gr_8080/axis2/services/neoWS.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://estia.hua.gr:8080/axis2/services/neoWS?wsdl" xnocompile="true" xendorsed="true" target="2.1">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/neoWS/wsdl/estia.hua.gr_8080/axis2/services/neoWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/neoWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/neoWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-neoWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/allo/paketo"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/neoWS"/>
+    </target>
+    <target name="wsimport-client-showValues" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/showValues"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/showValues" destdir="${build.generated.dir}/jax-wsCache/showValues" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/showValues/wsdl/estia.hua.gr_8080/axis2/services/showValues.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://estia.hua.gr:8080/axis2/services/showValues?wsdl" xnocompile="true" xendorsed="true" target="2.1">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/showValues/wsdl/estia.hua.gr_8080/axis2/services/showValues.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/showValues"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/showValues">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-showValues" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/neo/paketo"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/showValues"/>
+    </target>
+    <target name="wsimport-client-neoWS_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/neoWS_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/neoWS_1" destdir="${build.generated.dir}/jax-wsCache/neoWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/neoWS_1/wsdl/62.217.127.41_8080/axis2/services/neoWS.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://62.217.127.41:8080/axis2/services/neoWS?wsdl" xnocompile="true" xendorsed="true" package="neosserver" target="2.1">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/neoWS_1/wsdl/62.217.127.41_8080/axis2/services/neoWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/neoWS_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/neoWS_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-neoWS_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/neosserver"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/neoWS_1"/>
+    </target>
+    <target name="wsimport-client-neoWS_2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/neoWS_2"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/neoWS_2" destdir="${build.generated.dir}/jax-wsCache/neoWS_2" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/neoWS_2/wsdl/62.217.127.41_8080/axis2/services/neoWS.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://62.217.127.41:8080/axis2/services/neoWS?wsdl" xnocompile="true" xendorsed="true" target="2.1">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/neoWS_2/wsdl/62.217.127.41_8080/axis2/services/neoWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/neoWS_2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/neoWS_2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-neoWS_2" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/allo/paketo"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/neoWS_2"/>
+    </target>
+    <target name="wsimport-client-dspaceWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/dspaceWS"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/dspaceWS" destdir="${build.generated.dir}/jax-wsCache/dspaceWS" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/dspaceWS/wsdl/62.217.127.41_8080/axis2/services/dspaceWS.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://estia2.hua.gr:8080/axis2/services/dspaceWS?wsdl" xnocompile="true" xendorsed="true" target="2.1">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/dspaceWS/wsdl/62.217.127.41_8080/axis2/services/dspaceWS.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/dspaceWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/dspaceWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-dspaceWS" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/mydspacews"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/dspaceWS"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-neoWS, wsimport-client-showValues, wsimport-client-neoWS_1, wsimport-client-neoWS_2, wsimport-client-dspaceWS"/>
+</project>

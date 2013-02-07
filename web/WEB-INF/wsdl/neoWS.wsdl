@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns="http://paketo.allo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://paketo.allo">
+    <wsdl:documentation>neoWS</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://paketo.allo">
+            <xs:element name="withdrawThesis">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="withdrawThesisResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="showMetadataValue">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="element" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="qualifier" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="showMetadataValueResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="removeFile">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="bnumber" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="removeFileResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reinstateThesis">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reinstateThesisResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="hello">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="helloResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteThesis">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteThesisResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="completeSubmission">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="completeSubmissionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="clearMetaData">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="element" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="qualifier" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="clearMetaDataResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="changeMetadata">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="element" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="qualifier" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="newvalue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="changeMetadataResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addThesis">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="comid" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="colid" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addThesisResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addMetadata">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="element" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="qualifier" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addMetadataResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addFile">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="buf" nillable="true" type="xs:base64Binary"/>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addFileResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="addFileRequest">
+        <wsdl:part name="parameters" element="ns:addFile"/>
+    </wsdl:message>
+    <wsdl:message name="addFileResponse">
+        <wsdl:part name="parameters" element="ns:addFileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="removeFileRequest">
+        <wsdl:part name="parameters" element="ns:removeFile"/>
+    </wsdl:message>
+    <wsdl:message name="removeFileResponse">
+        <wsdl:part name="parameters" element="ns:removeFileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addMetadataRequest">
+        <wsdl:part name="parameters" element="ns:addMetadata"/>
+    </wsdl:message>
+    <wsdl:message name="addMetadataResponse">
+        <wsdl:part name="parameters" element="ns:addMetadataResponse"/>
+    </wsdl:message>
+    <wsdl:message name="changeMetadataRequest">
+        <wsdl:part name="parameters" element="ns:changeMetadata"/>
+    </wsdl:message>
+    <wsdl:message name="changeMetadataResponse">
+        <wsdl:part name="parameters" element="ns:changeMetadataResponse"/>
+    </wsdl:message>
+    <wsdl:message name="completeSubmissionRequest">
+        <wsdl:part name="parameters" element="ns:completeSubmission"/>
+    </wsdl:message>
+    <wsdl:message name="completeSubmissionResponse">
+        <wsdl:part name="parameters" element="ns:completeSubmissionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="addThesisRequest">
+        <wsdl:part name="parameters" element="ns:addThesis"/>
+    </wsdl:message>
+    <wsdl:message name="addThesisResponse">
+        <wsdl:part name="parameters" element="ns:addThesisResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deleteThesisRequest">
+        <wsdl:part name="parameters" element="ns:deleteThesis"/>
+    </wsdl:message>
+    <wsdl:message name="deleteThesisResponse">
+        <wsdl:part name="parameters" element="ns:deleteThesisResponse"/>
+    </wsdl:message>
+    <wsdl:message name="reinstateThesisRequest">
+        <wsdl:part name="parameters" element="ns:reinstateThesis"/>
+    </wsdl:message>
+    <wsdl:message name="reinstateThesisResponse">
+        <wsdl:part name="parameters" element="ns:reinstateThesisResponse"/>
+    </wsdl:message>
+    <wsdl:message name="helloRequest">
+        <wsdl:part name="parameters" element="ns:hello"/>
+    </wsdl:message>
+    <wsdl:message name="helloResponse">
+        <wsdl:part name="parameters" element="ns:helloResponse"/>
+    </wsdl:message>
+    <wsdl:message name="clearMetaDataRequest">
+        <wsdl:part name="parameters" element="ns:clearMetaData"/>
+    </wsdl:message>
+    <wsdl:message name="clearMetaDataResponse">
+        <wsdl:part name="parameters" element="ns:clearMetaDataResponse"/>
+    </wsdl:message>
+    <wsdl:message name="withdrawThesisRequest">
+        <wsdl:part name="parameters" element="ns:withdrawThesis"/>
+    </wsdl:message>
+    <wsdl:message name="withdrawThesisResponse">
+        <wsdl:part name="parameters" element="ns:withdrawThesisResponse"/>
+    </wsdl:message>
+    <wsdl:message name="showMetadataValueRequest">
+        <wsdl:part name="parameters" element="ns:showMetadataValue"/>
+    </wsdl:message>
+    <wsdl:message name="showMetadataValueResponse">
+        <wsdl:part name="parameters" element="ns:showMetadataValueResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="neoWSPortType">
+        <wsdl:operation name="addFile">
+            <wsdl:input message="ns:addFileRequest" wsaw:Action="urn:addFile"/>
+            <wsdl:output message="ns:addFileResponse" wsaw:Action="urn:addFileResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="removeFile">
+            <wsdl:input message="ns:removeFileRequest" wsaw:Action="urn:removeFile"/>
+            <wsdl:output message="ns:removeFileResponse" wsaw:Action="urn:removeFileResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addMetadata">
+            <wsdl:input message="ns:addMetadataRequest" wsaw:Action="urn:addMetadata"/>
+            <wsdl:output message="ns:addMetadataResponse" wsaw:Action="urn:addMetadataResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="changeMetadata">
+            <wsdl:input message="ns:changeMetadataRequest" wsaw:Action="urn:changeMetadata"/>
+            <wsdl:output message="ns:changeMetadataResponse" wsaw:Action="urn:changeMetadataResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="completeSubmission">
+            <wsdl:input message="ns:completeSubmissionRequest" wsaw:Action="urn:completeSubmission"/>
+            <wsdl:output message="ns:completeSubmissionResponse" wsaw:Action="urn:completeSubmissionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="addThesis">
+            <wsdl:input message="ns:addThesisRequest" wsaw:Action="urn:addThesis"/>
+            <wsdl:output message="ns:addThesisResponse" wsaw:Action="urn:addThesisResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteThesis">
+            <wsdl:input message="ns:deleteThesisRequest" wsaw:Action="urn:deleteThesis"/>
+            <wsdl:output message="ns:deleteThesisResponse" wsaw:Action="urn:deleteThesisResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="reinstateThesis">
+            <wsdl:input message="ns:reinstateThesisRequest" wsaw:Action="urn:reinstateThesis"/>
+            <wsdl:output message="ns:reinstateThesisResponse" wsaw:Action="urn:reinstateThesisResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="hello">
+            <wsdl:input message="ns:helloRequest" wsaw:Action="urn:hello"/>
+            <wsdl:output message="ns:helloResponse" wsaw:Action="urn:helloResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="clearMetaData">
+            <wsdl:input message="ns:clearMetaDataRequest" wsaw:Action="urn:clearMetaData"/>
+            <wsdl:output message="ns:clearMetaDataResponse" wsaw:Action="urn:clearMetaDataResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawThesis">
+            <wsdl:input message="ns:withdrawThesisRequest" wsaw:Action="urn:withdrawThesis"/>
+            <wsdl:output message="ns:withdrawThesisResponse" wsaw:Action="urn:withdrawThesisResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="showMetadataValue">
+            <wsdl:input message="ns:showMetadataValueRequest" wsaw:Action="urn:showMetadataValue"/>
+            <wsdl:output message="ns:showMetadataValueResponse" wsaw:Action="urn:showMetadataValueResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="neoWSSoap11Binding" type="ns:neoWSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="addFile">
+            <soap:operation soapAction="urn:addFile" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="removeFile">
+            <soap:operation soapAction="urn:removeFile" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addMetadata">
+            <soap:operation soapAction="urn:addMetadata" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMetadata">
+            <soap:operation soapAction="urn:changeMetadata" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="completeSubmission">
+            <soap:operation soapAction="urn:completeSubmission" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteThesis">
+            <soap:operation soapAction="urn:deleteThesis" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addThesis">
+            <soap:operation soapAction="urn:addThesis" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="reinstateThesis">
+            <soap:operation soapAction="urn:reinstateThesis" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hello">
+            <soap:operation soapAction="urn:hello" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawThesis">
+            <soap:operation soapAction="urn:withdrawThesis" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="clearMetaData">
+            <soap:operation soapAction="urn:clearMetaData" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="showMetadataValue">
+            <soap:operation soapAction="urn:showMetadataValue" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="neoWSSoap12Binding" type="ns:neoWSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="addFile">
+            <soap12:operation soapAction="urn:addFile" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="removeFile">
+            <soap12:operation soapAction="urn:removeFile" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addMetadata">
+            <soap12:operation soapAction="urn:addMetadata" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMetadata">
+            <soap12:operation soapAction="urn:changeMetadata" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="completeSubmission">
+            <soap12:operation soapAction="urn:completeSubmission" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteThesis">
+            <soap12:operation soapAction="urn:deleteThesis" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addThesis">
+            <soap12:operation soapAction="urn:addThesis" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="reinstateThesis">
+            <soap12:operation soapAction="urn:reinstateThesis" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hello">
+            <soap12:operation soapAction="urn:hello" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawThesis">
+            <soap12:operation soapAction="urn:withdrawThesis" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="clearMetaData">
+            <soap12:operation soapAction="urn:clearMetaData" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="showMetadataValue">
+            <soap12:operation soapAction="urn:showMetadataValue" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="neoWSHttpBinding" type="ns:neoWSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="addFile">
+            <http:operation location="neoWS/addFile"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="addFile"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="addFile"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="removeFile">
+            <http:operation location="neoWS/removeFile"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="removeFile"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="removeFile"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addMetadata">
+            <http:operation location="neoWS/addMetadata"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="addMetadata"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="addMetadata"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeMetadata">
+            <http:operation location="neoWS/changeMetadata"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="changeMetadata"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="changeMetadata"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="completeSubmission">
+            <http:operation location="neoWS/completeSubmission"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="completeSubmission"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="completeSubmission"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteThesis">
+            <http:operation location="neoWS/deleteThesis"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="deleteThesis"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="deleteThesis"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addThesis">
+            <http:operation location="neoWS/addThesis"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="addThesis"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="addThesis"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="reinstateThesis">
+            <http:operation location="neoWS/reinstateThesis"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="reinstateThesis"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="reinstateThesis"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hello">
+            <http:operation location="neoWS/hello"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="hello"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="hello"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="withdrawThesis">
+            <http:operation location="neoWS/withdrawThesis"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="withdrawThesis"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="withdrawThesis"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="clearMetaData">
+            <http:operation location="neoWS/clearMetaData"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="clearMetaData"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="clearMetaData"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="showMetadataValue">
+            <http:operation location="neoWS/showMetadataValue"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="showMetadataValue"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="showMetadataValue"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="neoWS">
+        <wsdl:port name="neoWSHttpSoap11Endpoint" binding="ns:neoWSSoap11Binding">
+            <soap:address location="http://estia.hua.gr:8080/axis2/services/neoWS.neoWSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="neoWSHttpSoap12Endpoint" binding="ns:neoWSSoap12Binding">
+            <soap12:address location="http://estia.hua.gr:8080/axis2/services/neoWS.neoWSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="neoWSHttpEndpoint" binding="ns:neoWSHttpBinding">
+            <http:address location="http://estia.hua.gr:8080/axis2/services/neoWS.neoWSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

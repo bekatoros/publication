@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://estia.hua.gr:8080/axis2/services/NewAxisFromJava?wsdl" uri="src/conf/xml-resources/web-service-references/NewAxisFromJava/wsdl/estia.hua.gr_8080/axis2/services/NewAxisFromJava.wsdl"/>
+    <system systemId="http://estia.hua.gr:8080/axis2/services/EthesisWS?wsdl" uri="src/conf/xml-resources/web-service-references/EthesisWS/wsdl/estia.hua.gr_8080/axis2/services/EthesisWS.wsdl"/>
+    <system systemId="http://estia.hua.gr:8080/axis2/services/neoWS?wsdl" uri="wsdl/estia.hua.gr_8080/axis2/services/neoWS.wsdl"/>
+    <system systemId="file:/home/marios/NetBeansProjects/Platform/web/WEB-INF/wsdl/estia.hua.gr_8080/axis2/services/neoWS.wsdl" uri="wsdl/neoWS.wsdl"/>
+    <system systemId="http://estia.hua.gr:8080/axis2/services/showValues?wsdl" uri="wsdl/estia.hua.gr_8080/axis2/services/showValues.wsdl"/>
+    <system systemId="http://62.217.127.41:8080/axis2/services/neoWS?wsdl" uri="wsdl/62.217.127.41_8080/axis2/services/neoWS.wsdl"/>
+    <system systemId="http://62.217.127.41:8080/axis2/services/showValues?wsdl" uri="wsdl/62.217.127.41_8080/axis2/services/showValues.wsdl"/>
+    <system systemId="http://62.217.127.41:8080/axis2/services/dspaceWS?wsdl" uri="wsdl/62.217.127.41_8080/axis2/services/dspaceWS.wsdl"/>
+</catalog>
