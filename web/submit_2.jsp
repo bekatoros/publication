@@ -259,7 +259,7 @@ else if ((Integer)session.getAttribute("verified")==1)
            try{   
                statement=null;
              statement = connection.createStatement();
-            int res = statement.executeUpdate("INSERT INTO delay (`sub_id`,`release`)VALUES ('"+subid+"',(DATE_ADD(now(), INTERVAL "+months+" MONTH)));");    
+            int res = statement.executeUpdate("INSERT INTO delay (`sub_id`,`release`,`checked`)VALUES ('"+subid+"',(DATE_ADD(now(), INTERVAL "+months+" MONTH)),0);");    
            
            }
              catch(Exception e){  out.println(e.toString());}  
@@ -422,27 +422,7 @@ else if ((Integer)session.getAttribute("verified")==1)
 <body>
 	<div id="container">
 
-		<div id="header" align='center'>		
-	
-				<table>
-					<tr>
-						<td >
-							<img src='images/hua1.gif' width='61' height='60' />
-						</td>
-						<td >
-							<h2><a href='http://www.hua.gr'>Χαροκόπειο Πανεπιστήμιο</a></h2>
-                                                        </br>					
-							<h2><a href='http://www.hua.gr/index.php?option=com_content&view=article&id=37&Itemid=318&lang=el'>Βιβλιοθήκη και Κέντρο Πληροφόρησης</a></h2>	
-							
-						</td>
-					</tr>
-					<tr>
-					<td colspan="2"><h1><a">Σύστημα Ηλεκτρονικής Υποβολής Εργασιών στην ΕΣΤΙΑ</a></h1></td>
-					</tr>
-				</table>
-		
-			
-		</div>
+				<%@include file="header.jsp" %>
 
 		<div id="menu-h">
 			<ul style="height: 30px">

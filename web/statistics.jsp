@@ -25,7 +25,7 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	
-	<title>Ολοκληρωμένες Υποβολές</title>
+	<title>Στατιστικά Υποβολών</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<style type="text/css">
 	.auto-style1 {
@@ -83,40 +83,64 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
                             <%
                             if ((session.getAttribute("verified")!=null)&&(Integer)session.getAttribute("verified")==1)
                             {
-                                   int number;
-                                   String email;
-                                   String fullname;     
-                                   String substring;
-                                   int level;                                                                                                      
-                                   try
-                                   {  
-                                    //active tasks();
+                                
+                                try
+                                 {  
+                                   
                                     statement = connection.createStatement();
-                                    
-                                    if(user.getRole()==3)
-                                    {//Γραμματεία
-                                        rs = statement.executeQuery("SELECT * FROM Submission WHERE (status="+finalstate+" or status=4) AND submitter="+user.getId()+";");
-                                    }
-                                    else
-                                    {
-                                         rs = statement.executeQuery("SELECT * FROM Submission WHERE status="+finalstate);
-                                    }
-                                    
-                                    //  episης θα εμφανιζει το λινκ για τα αποδεικτικο υποβολής        
-                                    out.println("<h4  align='center'>Ολοκληρωμένες Υποβολές</h4>");
+                                    rs = statement.executeQuery("SELECT d.name,s.com_id,count(*) as count"
+                                    + " FROM Submission as s ,Dep_Com as d WHERE year(completion)= "
+                                    + "(year(now())-1) and s.com_id=d.com_id  group by com_id;");
+                                    out.println("<h4  align='center'>Υποβολές προηγούμενου χρόνου ανά τμήμα</h4>");
                                     out.println("<table border='1'  align='center'>");
                                     while (rs.next())
-                                    {//Στο λινκ τεξτ κατι θα βαλω αν και δε ξερω τι.μαλλον ονομα χρήστη
-                                     number=rs.getInt("sub_id");
-                                    //θα τυπώσει όσες υποβολές έχουν ολοκληρωθεί  δηλαδή έχουν state = final
-                                     email=rs.getString("email");
-                                     fullname=rs.getString("full_name") ;
-                                     substring=email.substring(0,email.length()-mail.length());
-                                    //θα τυπώσει όσες υποβολές έχουν ολοκληρωθεί  δηλαδή έχουν state = final
-                                        level=rs.getInt("col_id");
-                                     out.println("<tr><td><a href='receipt.jsp?sid="+number+"' target='_blank'> "+substring+" "+collection[level]+" "+fullname+"</a></td></tr>");
+                                    {                                     
+                                     out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getInt("count") +"</td></tr>");
                                     }
-                                    out.println("</table>");                                    
+                                    out.println("</table></βρ>");                                   
+                                    
+                                  }
+                                  catch(Exception ex)
+                                  {
+                                       out.println("<p>"+ex.toString()+"</p>") ;
+                                  }
+                                
+                                 try
+                                 {  
+                                   
+                                    statement = connection.createStatement();
+                                    rs = statement.executeQuery("SELECT d.name,s.com_id,count(*) as count"
+                                    + " FROM Submission as s ,Dep_Com as d WHERE year(completion)= "
+                                    + "year(now()) and s.com_id=d.com_id  group by com_id;");
+                                    out.println("<h4  align='center'>Υποβολές ανά τμήμα (τρέχων έτος)</h4>");
+                                    out.println("<table border='1'  align='center'>");
+                                    while (rs.next())
+                                    {                                     
+                                     out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getInt("count") +"</td></tr>");
+                                    }
+                                    out.println("</table>");                                   
+                                    
+                                  }
+                                  catch(Exception ex)
+                                  {
+                                       out.println("<p>"+ex.toString()+"</p>") ;
+                                  }
+                                
+                                try
+                                 {  
+                                   
+                                    statement = connection.createStatement();
+                                    rs = statement.executeQuery("SELECT d.name,s.com_id,count(*) as count"
+                                    + " FROM Submission as s ,Dep_Com as d WHERE year(completion)= "
+                                    + "year(now()) and s.com_id=d.com_id  group by com_id;");
+                                    out.println("<h4  align='center'>Υποβολές ανά τμήμα (τρέχων έτος)</h4>");
+                                    out.println("<table border='1'  align='center'>");
+                                    while (rs.next())
+                                    {                                     
+                                     out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getInt("count") +"</td></tr>");
+                                    }
+                                    out.println("</table>");                                   
+                                    
                                   }
                                   catch(Exception ex)
                                   {
