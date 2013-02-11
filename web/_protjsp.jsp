@@ -105,7 +105,7 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
 </div>
 	<div id="footer">
 		<p>Επικοινωνία<br />
-		<a href="license.html">Άδεια χρήσης</a> - <a href="about.html">About</a>
+		<a href="license.jsp.html">Άδεια χρήσης</a> - <a href="about.html">About</a>
                 </p>
 	</div>
 </body>

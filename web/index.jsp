@@ -34,7 +34,7 @@
 						<td >
 							<h2><a href='http://www.hua.gr'>Χαροκόπειο Πανεπιστήμιο</a></h2>
                                                         </br>					
-							<h2><a href='http://www.hua.gr/index.php?option=com_content&view=article&id=37&Itemid=318&lang=el'>Βιβλιοθήκη και Κέντρο Πληροφόρησης</a></h2>	
+							<h2><a href='http://www.library.hua.gr'>Βιβλιοθήκη και Κέντρο Πληροφόρησης</a></h2>	
 							
 						</td>
 					</tr>
@@ -78,11 +78,7 @@
 	</div>
 <div class="clear">
 </div>
-	<div id="footer">
-		<p>Επικοινωνία<br />
-		<a href="license.html">Άδεια χρήσης</a> - <a href="about.html">About</a>
-                </p>
-	</div>
+<%@include file="footer.jsp" %>
 </body>
 
 </html>

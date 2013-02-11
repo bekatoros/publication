@@ -125,11 +125,7 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
 	</div>
 <div class="clear">
 </div>
-	<div id="footer">
-		<p>Επικοινωνία<br />
-		<a href="license.html">Άδεια χρήσης</a> - <a href="about.html">About</a>
-                </p>
-	</div>
+<%@include file="footer.jsp" %>
 </body>
 
 </html>

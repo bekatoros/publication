@@ -403,11 +403,7 @@ function displayerrorBox(num)
 	</div>
 <div class="clear">
 </div>
-	<div id="footer">
-		<p>Επικοινωνία<br />
-		<a href="license.html">Άδεια χρήσης</a> - <a href="about.html">About</a>
-                </p>
-	</div>
+<%@include file="footer.jsp" %>
 </body>
 
 </html>

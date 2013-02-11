@@ -15,7 +15,7 @@
 						<td >
 							<h2><a href='http://www.hua.gr'>Χαροκόπειο Πανεπιστήμιο</a></h2>
                                                         </br>					
-							<h2><a href='http://www.hua.gr/index.php?option=com_content&view=article&id=37&Itemid=318&lang=el'>Βιβλιοθήκη και Κέντρο Πληροφόρησης</a></h2>	
+							<h2><a href='http://www.library.hua.gr/'>Βιβλιοθήκη και Κέντρο Πληροφόρησης</a></h2>	
 							
 						</td>
 					</tr>
