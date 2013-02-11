@@ -126,18 +126,25 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
                                        out.println("<p>"+ex.toString()+"</p>") ;
                                   }
                                 
-                                try
+                        
+                              
+                                
+                                /*
+ SELECT d.name,s.com_id,s.col_id,col.name,count(*) as count FROM Submission as s ,Dep_Com as d ,Collection as col  WHERE year(completion)= (year(now())-1) and s.com_id=d.com_id  and s.col_id=col.col_id and col.com_id =d.com_id group by s.com_id,s.col_id;
+ */
+                                  try
                                  {  
                                    
                                     statement = connection.createStatement();
-                                    rs = statement.executeQuery("SELECT d.name,s.com_id,count(*) as count"
-                                    + " FROM Submission as s ,Dep_Com as d WHERE year(completion)= "
-                                    + "year(now()) and s.com_id=d.com_id  group by com_id;");
-                                    out.println("<h4  align='center'>Υποβολές ανά τμήμα (τρέχων έτος)</h4>");
+                                    rs = statement.executeQuery("SELECT d.name,s.com_id,s.col_id,col.name,count(*) "
+                                    + "as count FROM Submission as s ,Dep_Com as d ,Collection as col "
+                                    + " WHERE year(completion)= (year(now())-1) and s.com_id=d.com_id  "
+                                    + "and s.col_id=col.col_id and col.com_id =d.com_id group by s.com_id,s.col_id;");
+                                    out.println("<h4  align='center'>Υποβολές ανά επίπεδο</h4>");
                                     out.println("<table border='1'  align='center'>");
                                     while (rs.next())
                                     {                                     
-                                     out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getInt("count") +"</td></tr>");
+                                     out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getString("col.name") +" "+rs.getInt("count") +"</td></tr>");
                                     }
                                     out.println("</table>");                                   
                                     
@@ -146,6 +153,29 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
                                   {
                                        out.println("<p>"+ex.toString()+"</p>") ;
                                   }
+                                
+                                 try
+                                 {  
+                                   
+                                    statement = connection.createStatement();
+                                    rs = statement.executeQuery("SELECT d.name,s.com_id,s.col_id,col.name,count(*) "
+                                    + "as count FROM Submission as s ,Dep_Com as d ,Collection as col "
+                                    + " WHERE year(completion)= year(now()) and s.com_id=d.com_id  "
+                                    + "and s.col_id=col.col_id and col.com_id =d.com_id group by s.com_id,s.col_id;");
+                                    out.println("<h4  align='center'>Υποβολές ανά επίπεδο (τρέχων έτος)</h4>");
+                                    out.println("<table border='1'  align='center'>");
+                                    while (rs.next())
+                                    {                                     
+                                     out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getString("col.name") +" "+rs.getInt("count") +"</td></tr>");
+                                    }
+                                    out.println("</table>");                                   
+                                    
+                                  }
+                                  catch(Exception ex)
+                                  {
+                                       out.println("<p>"+ex.toString()+"</p>") ;
+                                  }
+                                
                             }
                             %>
 			</div>

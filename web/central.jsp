@@ -272,6 +272,8 @@ else
                                 }else
                                 if(user.getRole()==2)//library
                                 {
+                                     out.println("<table align='center'><tr><td><form action='statistics.jsp' method='post' >"
+                                       + "<input class='large blue button' name='Button1' type='submit' value='Στατιστικά χρήσης' ></input> </form></td>");
                                   
                                   out.println("<h4  align='center'>Ενεργές εργασίες</h4>");  
                                   try{  

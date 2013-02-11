@@ -49,7 +49,7 @@
 
     You should have received a copy of the GNU Affero General Public License<br/>
     along with this program.  If not, see <a href="http://www.gnu.org/licenses/agpl.html">http://www.gnu.org/licenses/agpl.html</a>.<br/>
-    The source code is available on <a href="http://e-thesis.svn.sourceforge.net/viewvc/e-thesis/Platform/">http://e-thesis.svn.sourceforge.net/viewvc/e-thesis/Platform/</a>		
+    The source code is available on <a href="https://github.com/bekatoros/ethesis">https://github.com/bekatoros/ethesis</a>		
                         </div>
 		
 		</div>
