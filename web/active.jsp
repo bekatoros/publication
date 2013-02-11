@@ -196,29 +196,7 @@ if((user.getRole()==1)&&(!sub_id.equals("0")))//erxetai apo to edit_submission
 		<div class="container">
 			<!-- header -->
 			<header id="header">
-				
-<table>
-					<tr>
-						<td >
-							<img src='images/hua1.gif' width='61' height='60' />
-						</td>
-						<td >
-                                                    <a href='http://www.hua.gr'>Χαροκόπειο Πανεπιστήμιο</a>
-                                                        </br>					
-							<a href='http://www.library.hua.gr'>Βιβλιοθήκη και Κέντρο Πληροφόρησης</a>
-                                                              </br>	
-						<a href="central.jsp">Σύστημα Ηλεκτρονικής Υποβολής Δημοσιεύσεων στην ΕΣΤΙΑ</a>
-						</td>
-					</tr>
-					
-				</table>
-				<!-- search -->
-				<div class="search">
-					
-<div class="cl">&nbsp;</div><p></p>
-				</div>
-				<!-- end of search -->
-				<div class="cl">&nbsp;</div>
+				<%@include file="header.jsp" %>
 			</header>
 			<!-- end of header -->
 			<!-- navigaation -->
@@ -322,19 +300,8 @@ if((user.getRole()==1)&&(!sub_id.equals("0")))//erxetai apo to edit_submission
 			<div class="cl">&nbsp;</div>
 			
 			<!-- footer -->
-			<div id="footer">
-				<div class="footer-nav">
-					<ul>
-						<li><a href="license.html">Άδεια χρήσης</a> </li>
-						<li><a href="about.html">About</a></li>
-						<li> <a href="mailto:bekatoros@hua.gr">Επικοινωνία</a></li>
-						
-					</ul>
-					<div class="cl">&nbsp;</div>
-				</div>
-				<p class="copy">&copy; Copyright 2012<span>|</span> Design by <a href="http://bekatoros.eu" target="_blank">Marios Bekatoros</a></p>
-				<div class="cl">&nbsp;</div>
-			</div>
+							
+<%@include file="footer.jsp" %>
 			<!-- end of footer -->
 		</div>
 		<!-- end of container -->
