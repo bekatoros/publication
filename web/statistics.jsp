@@ -168,7 +168,7 @@ String pagetoshow="<a href='index.jsp'></br>Δεν έχετε κάνει σύν�
                                     {                                     
                                      out.println("<tr><td>"+rs.getString("d.name") +" "+rs.getString("col.name") +" "+rs.getInt("count") +"</td></tr>");
                                     }
-                                    out.println("</table>");                                   
+                                    out.println("</table><p></p>");                                   
                                     
                                   }
                                   catch(Exception ex)

@@ -245,7 +245,7 @@ else if ((Integer)session.getAttribute("verified")==1)
        }
        
   
-    
+    try{
           String months= request.getParameter("months");
      
           if (months.equals("0"))
@@ -256,15 +256,17 @@ else if ((Integer)session.getAttribute("verified")==1)
           else
           {
              
-           try{   
+              
                statement=null;
              statement = connection.createStatement();
             int res = statement.executeUpdate("INSERT INTO delay (`sub_id`,`release`,`checked`)VALUES ('"+subid+"',(DATE_ADD(now(), INTERVAL "+months+" MONTH)),0);");    
            
-           }
-             catch(Exception e){  out.println(e.toString());}  
+           
           }
-          
+          }
+             catch(Exception e){  
+                 //out.println(e.toString());
+        }  
        //Εδώ θα προσθέσω αν έχει εικόνες,πινακες ,διαγράμματα , xartes  kai σελιδες      
        
           MDvalue=""+request.getParameter("pages")+" σ.";
@@ -595,7 +597,7 @@ else if ((Integer)session.getAttribute("verified")==1)
                                             +"<a  href='http://www.hua.gr/images/stories/mainsite/lib/gray_PTYX.pdf' target='_blank'>Οδηγίες μορφοποίησης εργασιών</a></br>"
                                             +"<form id='upload' action='upload.jsp' method='post' enctype='multipart/form-data'>"                                         
                                             +"<div><label for='fileselect'>Επιλογή αρχείου:</label>  "
-                                            + "<INPUT type='file' name='fileToUpload' id='fileToUpload' onchange='fileSelected();' />   </div>"
+                                            + "<INPUT type='file' name='fileToUpload' id='fileToUpload' onchange='fileSelected();' accept='application/pdf' />   </div>"
                                             +"<div id='prbar'></div>"
                                             +" <div id='fileSize'></div>"
                                             + "<input class='large blue button' type='button' id='bt1' onclick='uploadFile()' value='Υποβολή' />   </form> "
